@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //1.翻转数组
+        // let arr=['a','b','c']   //['c','b','a']
+        // // 1. reverse翻转数组
+        // // 2.会改变原来的数组，也会返回一个新数组，都是翻转之后的
+        // const reverseArr = arr.reverse()
+        // console.log(arr);
+        // console.log(reverseArr);
+
+        // //2.数组转字符串join
+        // //join可以将数组转为字符串
+        // //join传入参数，分隔符
+        // let arr2 = ['html','css','js']  // 'html,css,js'
+        // const str = arr2.join(',')
+        // const str2 = arr2.join('/') // html/css/js
+        // console.log(str);
+        // console.log(str2);
+
+        // //3.数组排序sort
+        // // 会改变原来的数组，也会返回一个新数组，都是排序之后的
+        // // 接受一个函数作为参数，函数有返回值， 且有两个参数，返回第一个参数-第二个参数为升序，反之为降序
+        let arr1 = [1,2,3,4,5]
+        // arr3.sort((a, b)=>{
+        // //升序
+        //     return a-b
+        // })
+        // console.log(arr3);
+
+        // const res = arr3.sort((a,b)=>{
+        //     return b-a
+        // })
+
+        //求和reduce
+        //第一个参数是累加器
+        //第二个参数是我们最后的返回的结果
+        // 5+3  pre=0 cur=arr3[0]
+        // 3+7 pre=5 cur=arr3[1]
+        const sum1 = arr1.reduce((pre,cur)=>{
+            return pre+cur
+        },0)
+        console.log(sum1); 
+
+        let arr2 = [1,2,3,4,5]
+        const sum2 = arr2.reduce((prev,cur)=>{
+            return prev+cur
+        },10)
+        console.log(sum2); //25
+    </script>
+</body>
+</html>

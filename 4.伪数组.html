@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // let arr = [1,2,3]
+        // console.log(arr);
+        // arr.forEach(item=>{
+        //     console.log(item);
+        // })
+
+        // 伪数组的原型和真数组不一样，这是我们判断是否为伪数组的依据
+        const divList = document.querySelectorAll('div')
+        console.log(divList);
+        divList.forEach(item=>{
+            console.log(item);
+        })
+
+        // divList中没有concat属性
+        dixList.concat(1,2,3)
+        function fn() {
+            console.log(arguments);
+            arguments.concat(1,2,3)
+            // arguments伪数组中，没有forEach方法
+            arguments.forEach(arguments=>{
+                console.log(arguments);
+            })
+        }
+        fn(1,2,3)
+    </script>
+</body>
+</html>

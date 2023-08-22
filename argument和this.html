@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 1.arguments 获取函数调用时 传入的实参伪数组
+        // function fn(){
+        //     console.log(arguments);
+        // }
+        // // 不传参数,打印一个Arguments对象，length为0 
+        // fn()
+        // // 传入三个参数，打印一个Arguments对象，length为3
+        // fn(1,2,3)
+        // // 使用场景，你不知道函数应该传几个参数的时候
+        // function add() {
+        //     let sum = 0
+        //     for(let i = 0;i<arguments.length;i++){
+        //         sum += arguments[i]
+        //     }
+        //     return sum
+        // }
+
+        // const sum = add(1,2,5,6)
+        // console.log(sum);
+
+        // 2.this
+        function fn2(){
+            console.log(arguments);
+            console.log(this);
+            console.log(this.Object);
+        }
+
+        function fn3() {
+            console.log('aaa');
+        }
+        // 使用()来调用函数实际上是一个简写
+        fn2()
+        // 下面的才是完整写法 call函数的第一个参数，代表this指向默认指向window后面就是函数的实参也就是arguments
+        fn2.call(window,1,2,3)
+        // 我们可以通过改变call的第一个参数，来改变this指向
+        fn2.call(fn3,1,2,3)
+    </script>
+</body>
+</html>

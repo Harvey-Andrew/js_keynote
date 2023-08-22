@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let egg = '鸡蛋'
+        // 函数定义
+        // params是入参，比如说把鸡蛋放锅里，鸡蛋就是入参
+        function pot(params) {
+            console.log('加热');
+            return '熟鸡蛋'
+        }
+        // 锅里煎蛋
+        const goodEgg = pot(egg)
+        console.log(goodEgg);
+
+        // 匿名函数
+        (function (params) {
+            // 函数执行语句
+            console.log('加热');
+            // 返回值 用return返回熟鸡蛋
+            return '熟鸡蛋'
+        })('鸡蛋')
+
+        // es6当中的函数写法 箭头函数
+        const hotPot = (params) =>{
+            console.log('煮');
+            return "熟饭"
+        }
+        // 加圆括号，执行函数
+        const rawRice = hotPot('生米')
+        console.log(rawRice);
+
+        // 相加的函数
+        const add01 = (a,b) =>{
+            let sum = a + b
+            return sum
+        } 
+
+        // 返回值简写 =>代表了返回
+        const add02 = (a,b) =>a+b
+        
+        // 复杂写法
+        const add03 =(a,b)=>{
+            return {
+                a,
+                b
+            }
+        }
+
+        // 简单写法，用圆括号包裹对象，可以直接返回
+        const add04 = (a,b)=>({a,b})
+    </script>
+</body>
+</html>

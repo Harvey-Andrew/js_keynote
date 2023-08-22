@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用const声明一个方括号
+        const array = [1,2,4,5]
+        const array2 = new Array(1,4,6,7)
+        console.log(array);
+        console.log(array2);
+
+        // 从字符串转数组
+        let str = '1,2,3,4,5,a,g,v'
+        let strArr = str.split(',')
+        console.log(strArr);
+
+        let str2 = '4545faf'
+        // Array.from将字符串转为数组，每个字符都是一个项
+        let strArr2 = Array.from(str2)
+        console.log(strArr2);
+
+        // 从对象转数组
+        let obj = {
+            '0':125,
+            '1':false,
+            '2':()=>{
+                console.log('你好');
+            },
+            'length':3
+        }
+        
+        // 对象转数组两点局限性，1.下标必须为数字类型的字符串2. 必须含有length属性
+        let objArr = Array.from(obj)
+        console.log(objArr);
+
+        // 3.数组的截取和拼接
+        let arr = [1,2,43,5,67]
+
+        // slice 截取数组
+        let subArr = arr.slice(0,3)
+        console.log(subArr);
+
+        let shortArr1 = [1,2,3]
+        let shortArr2 = [4,5,6]
+        // 扩展... 可以将数组展开 [4,5,6] ---->4,5,6
+        // concat 可以填入多个参数，也可以直接填入一个数组
+        let longArr = shortArr1.concat(...shortArr2)
+        console.log(longArr);
+        let longArr2 = [...shortArr1,...shortArr2]
+        console.log(longArr2);
+    </script>
+</body>
+</html>

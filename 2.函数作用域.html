@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn() {
+        
+        // // 在作用域内声明的变量，我们称为局部变量
+        // let a=1
+        // console.log(a);
+        // }
+        // fn()
+        //在作用域外部，无法访问到作用域内声明的变量
+        // console.log(a);
+
+        // // 全局变量只有window 
+
+        // //问，下面的代码打印什么
+        // const fn=()=>{
+        //     let a=1
+        //     const fn1=()=>{
+        //         let a=2
+        //         console.log(a);
+        //     }
+        //     console.log(a); 
+        //     a=3
+        //     fn1( )
+        // }
+        // fn()
+        // 1.执行fn a=1打印
+        // 2.执行了fn1 a=2打印
+        //12
+        
+        //下面的代码打印什么
+        const fn1=()=>{
+            let a=4
+            const fn2=()=>{
+                let a=5
+                const fn3=()=>{
+                    console.log(a);
+                }
+                console.log(a);
+                a=24
+                fn3() 
+            }
+            console.log(a);
+            a=30
+            fn2()
+        }
+        fn1()
+        // 4 5 24
+    </script>
+        
+</body>
+</html>

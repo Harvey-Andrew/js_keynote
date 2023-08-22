@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class类
+        class Doggie{
+            constructor(name){
+                this.name = name
+            }
+            legNumber = 4
+            bar(){
+                console.log('bar');
+            }
+
+            waving(){
+                console.log('waving');
+            }
+        }
+        // 使用new操作符，来构造一个对象
+        let chaiQuan = new Doggie('柴犬')
+        console.log(chaiQuan);
+    </script>
+</body>
+</html>

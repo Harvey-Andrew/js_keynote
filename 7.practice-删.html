@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<input type="text" id="input" />
+		<ul id="list"></ul>
+
+		<script>
+			const array = [
+				{
+					name: "张三",
+					id: 1001,
+				},
+				{
+					name: "李四",
+					id: 1002,
+				},
+				{
+					name: "王五",
+					id: 1003,
+				},
+				{
+					name: "狗蛋",
+					id: 1004,
+				},
+			];
+			// 获取到list对象
+			const list = document.getElementById("list");
+			// 获取到input对象
+			const input = document.getElementById("input");
+
+			// 删除list下面所有的元素
+			const removeAllChild = () => {
+				const lis = document.querySelectorAll("li");
+				if (lis.length) {
+					// 循环伪数组，删除list下面所有的元素
+					for (let i = 0; i < lis.length; i++) {
+						list.removeChild(lis[i]);
+					}
+				}
+			};
+
+			// 重新渲染ul list
+			const renderList = (array) => {
+				// 先清空list下面的元素
+				removeAllChild();
+				// 将array中的数据添加到列表中
+				for (let i = 0; i < array.length; i++) {
+					const item = array[i];
+					console.log(item);
+					const li = document.createElement("li");
+					li.innerHTML = item.name;
+					list.appendChild(li);
+				}
+			};
+			renderList(array);
+
+			// 监听input按键事件，当按下回车键的时候,通过输入的id值，找到数组中对应的下标，然后调用splice方法，删除数组中对应的项目
+			input.onkeydown = (e) => {
+				if (e.keyCode === 13) {
+					// input当中的数据
+					const value = Number(e.target.value);
+					// 找到id为value的数据下标 findIndex暂时看不懂，没关系
+					const targetIndex = array.findIndex((item) => {
+						return item.id === value;
+					});
+					if (targetIndex >= 0) {
+						array.splice(targetIndex, 1);
+						renderList(array);
+					}
+				}
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Calculator{
+            constructor(a,b){
+                this.a = a
+                this.b = b
+            }
+            add(){
+                return this.a + this.b
+            }
+            subtract(){
+                return this.a - this.b
+            }
+            multiply(){
+                return this.a * this.b
+            }
+            divide(){
+                return this.a / this.b
+            }
+        }
+        const calObj = new Calculator(50,6)
+        const addNum = calObj.add()
+        const subNum = calObj.subtract()
+        const mulNum = calObj.multiply()
+        const divNum = calObj.divide()
+        console.log(addNum);
+        console.log(subNum);
+        console.log(mulNum);
+        console.log(divNum);
+    </script>
+</body>
+</html>

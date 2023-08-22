@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="like">通过好评排序</button>
+    <button id="price">通过价格排序</button>
+    <ul id="list"></ul>
+    <script>
+        const sales=[
+            {
+                name:'张三',
+                like:30,
+                price:100
+            },{
+                name:'李四',
+                like:60,
+                price:66
+            },{
+                name:'王五',
+                like:10,
+                price:102
+            }
+        ]
+
+        // 拿到list对象
+        const list = document.getElementById('list')
+        // 拿到button对象
+        const like = document.getElementById('like')
+        const price = document.getElementById('price')
+
+        // 优化技巧 消除重复 事不过三
+        // 定义一个删除元素，删除所有的li标签 将删除函数封装起来
+        const removeLis = () =>{
+            // 删除所有的li标签
+            const lis = document.querySelectorAll('li')
+            console.log(lis);
+            lis.forEach(li => {
+                list.removeChild(li)
+            })
+        }
+ 
+        // 定义一个重新渲染的函数 将渲染函数封装起来
+        const reRenderList = (array) => {
+            removeLis()
+            // 然后用新的数组去渲染列表
+            array.forEach(sale =>{
+                const li = document.createElement('li')
+                li.innerHTML = `${sale.name}-----${sale.like}-----${sale.price}`
+                list.appendChild(li)
+            })            
+        }
+        const ordered = (array,attr)=>{
+            return array.sort((a,b)=> {return a[attr] - b[attr]})
+        }
+        reRenderList(sales)
+
+        // onclick事件，注册按钮点击
+        like.onclick = () =>{
+            // 对于对象排序，需要取出对象中的值来进行比较
+            const result = ordered(sales,'like')
+            // 然后用新的数组去渲染列表
+            reRenderList(result)
+        }
+
+        price.onclick = () =>{
+            // 对于对象排序，需要取出对象中的值来进行比较
+            const result = ordered(sales,'price')
+            // 然后用新的数组去渲染列表
+            reRenderList(result)
+        }
+    </script>
+</body>
+</html>

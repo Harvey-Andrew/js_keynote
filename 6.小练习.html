@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="text" id="input" />
+		<ul id="list"></ul>
+		<script>
+			// 第一步，获取input当中输入文本的数据getElementById通过id获取界面中的元素对象
+			const input = document.getElementById("input");
+			console.log(input);
+			const list = document.getElementById("list");
+			const todos = [];
+			// 监听input的按键事件onkeydown是按键事件，我们给input的按键事件赋予了执行函数
+			input.onkeydown = (event) => {
+				console.log(event);
+				// 如果这个keyCode是13说明我们按下了回车键
+				if (event.keyCode === 13) {
+					console.log(event.target.value);
+					if (todos.includes(event.target.value)) {
+						alert("已经有这个值啦！");
+					} else {
+						todos.push(event.target.value);
+						// 创建一个li标签createElement
+						const li = document.createElement("li");
+						// innerHTML就是li标签中的内容
+						li.innerHTML = event.target.value;
+						// appendChild就是将li标签放到ul标签中
+						list.appendChild(li);
+					}
+				}
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 1、push用于在数组尾部添加一个值，也可以添加多个
+        // let arr=[0,1,2,3]
+        // arr.push(4) 
+        // console.log(arr);
+        // arr.push(5,6)
+        // console.log(arr);
+        // // push不能去传入一个数组，需要将数组展开，否则会将整个数组都放进去
+        // arr.push(...[7,8])
+        // console.log(arr);
+        // //从头部添加unshift()
+        // let arr2=['a','b','c']
+        // arr2.unshift('d')
+        // console.log(arr2);
+        // arr2.unshift('e','f')
+        // console.log(arr2);
+        // arr2.unshift(...['g','h'])
+        // console.log(arr2);
+
+        // splice 增删改集大成第一个参数,开始下标，第二个参数,需要从这个下标开始，删除的个数后面的参数，都是需要添加的元素
+        // let subMonth = ['1月','5月','8月']
+        // subMonth.splice(1,0,'2月','3月','4月')
+        // console.log(subMonth);
+        // subMonth.splice(5,0,'6月','7月')
+        // console.log(subMonth);
+        // subMonth.splice(8,0,'9月','10月','11月','12月')
+        // console.log(subMonth);
+
+        // //删除元素
+        // //跟push对应，pop从 尾巴删除一个元素
+        // let arr4=[1,2,3]
+        // arr3.pop()
+        // console. log(arr4);
+        // // shift从头部删除，与unshift对应
+        // arr4.shift()
+        // console.log(arr4);
+
+        //查
+        //通过下标获取值
+        let array = ['a', 'b', 'c']
+        let b = array[1] 
+        console.log(b);
+        //通过值拿数组下标
+        const index = array.indexOf('c' ) 
+        console.log(index); //返回2 
+        //判断数组中是否包含某个值includes 返回一个bool,接受，数组中的元素作为参数
+        const isInArr = array.includes('b')
+        console.log(isInArr); 
+        const isInArr2 = array.includes('d')
+        console.log(isInArr2);
+        const isInArr3=array.indexOf('a') 
+        const isInArr4=array.indexOf('d')  //返回-1
+        if(isInArr3>=0){
+            console.log('a在数组中');
+        }
+
+        if(isInArr4<0){
+            console.log('d不在数组中');
+        }
+    </script>
+</body>
+</html>
